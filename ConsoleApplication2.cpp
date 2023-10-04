@@ -42,7 +42,7 @@ int main()
 		switch (act)
 		{
 		case 1:
-			///de construit functia de logare si actiune lmao
+			///de construit functia de logare si actiuni
 		case 2:
 			cout << "enter usernname and password \n";
 			cin >> newname >> newpass;
