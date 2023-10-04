@@ -1,35 +1,6 @@
 #include<bits/stdc++.h>
 #include <C:\Users\flori\source\repos\ConsoleApplication1\Source1.cpp>
 using namespace std;
-class user
-{private:
-	string username[1005], password[1005];
-public:
-	void createuser(string newname, string newpass, int i)
-	{
-		username[i] = newname;
-		password[i] = newpass;
-	}
-	bool passcheck(string passcheck, string usercheck, int i) const
-	{
-		return(password[i] == passcheck && username[i]==usercheck);
-	}
-	void change(string passch, int i, bool t)
-	{
-		if (t)
-			password[i] = passch;
-		else
-			username[i] = passch;
-	}
-	string un(int i)
-	{
-		return username[i];
-	}
-	string pas(int i)
-	{
-		return password[i];
-	}
-};
 int act, con, i;
 string newname, newpass, newpass2;
 user can[1005];
