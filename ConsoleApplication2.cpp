@@ -21,14 +21,10 @@ public:
 		else
 			username[i] = passch;
 	}
-	string un(int i)
-	{
-		return username[i];
-	}
-	string pas(int i)
-	{
-		return password[i];
-	}
+    void lista(int i)
+    {
+        cout << username[i] << "   " << password[i] << " ";
+    }
 };
 int act, con, i;
 string newname, newpass, newpass2;
@@ -69,7 +65,7 @@ int main()
 		case 4:
 			cout << "username" << "   " << "password \n";
 			for (i = 1; i <= con; i++)
-				cout << can[i].un(i) << "   " << can[i].pas(i);
+                		can[i].lista(i);
 		default:
 			cout << "wrong input \n";
 		};
