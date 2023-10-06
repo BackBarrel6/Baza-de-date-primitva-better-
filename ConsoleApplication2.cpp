@@ -11,13 +11,32 @@ public:
         username = newname;
         password = newpass;
     }
-	/*int userreturn(string currentname, string currentpassword)
-	{
+    short userreturn(string currentname, string currentpassword) const
+    {
+        if (username == currentname && password == currentpassword) return 1;
+        if (username != currentname)return 2;
+        if (username == currentname && password != currentpassword)return 3;
+	}
+    void changeuser(string newname)
+    {
+        username = newname;
+    }
+    void changepass(string newpass)
+    {
+        password = newpass;
+    }
+    bool passverify(string newpass1, string newpass2)
+    {
+        if (newpass1 == newpass2)return 1;
+        else return 0;
+    }
+    void passchangeread()
+    {
 
-	}*/
+    }
 };
 int act, con;
-string newname, newpass, newpass2;
+string newname, newpass, newpass2, newpass3;
 user n[1005];
 int main()
 {
@@ -46,11 +65,29 @@ int main()
 		cin>>newname>>newpass;
 			cout<< "what do you want to change: 1 for username \n 2 for password \n";
 				cin>>actcase3;
-			switch(actcase3)
-			{case 1:
+                for (int i = 1; i <= con; i++)
+                    switch (n[i].userreturn(newname, newpass))
+                    {case 1:
+                        switch (actcase3)
+                        {
+                        case 1:
+                            cout << "enter new pass";
+                            do
+                            {
+                                cin >> newpass2;
+                                cout << "please verify the password";
+                                cin >> newpass3;
+                            } while (!n[i].passverify(newpass2,newpass3));
+                            n[i].changepass(newpass2);
+                            i = con;
+                            break;
+                        case 2:
+                            string newname2;
+                            cout << "enter new name";
 
+                        };
 
-			};
+                    };
         }
     };
 }
