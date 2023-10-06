@@ -21,10 +21,10 @@ public:
 		else
 			username[i] = passch;
 	}
-    void lista(int i)
-    {
-        cout << username[i] << "   " << password[i] << " ";
-    }
+	void lista(int i)
+	{
+		cout << username[i] << "   " << password[i] << " ";
+	}
 };
 int act, con, i;
 string newname, newpass, newpass2;
@@ -44,8 +44,8 @@ int main()
 			cin >> newname >> newpass;
 			cout << "confirm pass \n";
 			cin >> newpass2;
-			if(newpass==newpass2)
-			can[++con].createuser(newname, newpass, con);
+			if (newpass == newpass2)
+				can[++con].createuser(newname, newpass, con);
 			break;
 		case 3:
 			bool t;
@@ -53,19 +53,19 @@ int main()
 			cin >> newname >> newpass2;
 			cout << "do you want to change name or password, 1 for password and 0 for username \n";
 			cin >> t;
-			for(i=1;i<=con;i++)
-				if(can[i].passcheck(newname,newpass,i))
+			for (i = 1; i <= con; i++)
+				if (can[i].passcheck(newname, newpass, i))
 				{
 					cout << "enter new password \n";
 					cin >> newpass;
-					can[i].change(newpass,i,t);
+					can[i].change(newpass, i, t);
 					break;
 				}
 			break;
 		case 4:
 			cout << "username" << "   " << "password \n";
 			for (i = 1; i <= con; i++)
-                		can[i].lista(i);
+				can[i].lista(i);
 		default:
 			cout << "wrong input \n";
 		};
