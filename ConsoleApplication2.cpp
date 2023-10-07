@@ -93,7 +93,7 @@ int main()
                 };
             } while (n[i].userreturn(newname, newpass));
             cout << "what do you want to change: 1 for username \n 2 for password \n";
-            cin >> act_case3;
+            cin >> act_case3; //sexy bomba racheta
             for (int i = 1; i <= con; i++)
                 switch (act_case3)
                 {
