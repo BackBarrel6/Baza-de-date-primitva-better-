@@ -39,20 +39,26 @@ public:
     {
     }
 };
-int act, con;
+int act, con, i;
 string newname, newpass, newpass2, newpass3, newname2;
+bool v;
 user n[1005];
 int main()
 {
     cout << "enter action \n 1.Log in \n 2.Create user \n 3.Change password or username \n 4.List users \n 5.(admin)Read users from file \n";
-    cin >> act;
+
     while (true)
     {
+        cin >> act;
         switch (act)
         {
         case 1:
             /// de scris asta ca mie lene
         case 2:
+            cout << "are you sure you want to proceed?";
+            cin >> v;
+            if (v == 0)
+                break;
             cout << "enter username and password";
             cin >> newname >> newpass;
             cout << "enter password again";
@@ -64,43 +70,60 @@ int main()
             }
             break;
         case 3:
+            cout << "are you sure you want to proceed?";
+            cin >> v;
+            if (v == 0)
+                break;
             int act_case3;
             cout << "enter old username and password \n";
             cin >> newname >> newpass;
-            cout << "what do you want to change: 1 for username \n 2 for password \n";
-            cin >> act_case3;
-            for (int i = 1; i <= con; i++)
+            do
+            {
                 switch (n[i].userreturn(newname, newpass))
                 {
                 case 1:
-                    switch (act_case3)
-                    {
-                    case 1:
-                        cout << "enter new pass";
-                        do
-                        {
-                            cin >> newpass2;
-                            cout << "please verify the password";
-                            cin >> newpass3;
-                        } while (!n[i].passverify(newpass2, newpass3));
-                        n[i].changepass(newpass2);
-                        cout << "password succesfully changed";
-                        i = con;
-                        break;
-                    case 2:
-                        cout << "enter new name";
-                        n[i].changeuser(newname2);
-                        cout << "username succesfully changed";
-                        break;
-                    default:
-                        cout << "wrong input";
-                        break;
-                    };
-                case 2:
-                    cout << "user does not exist";
+                    cout << "correct password and username, logging in...";
                     break;
+                case 2:
+                    cout << "user does not exist\n enter details again";
+                    cin >> newname >> newpass;
                 case 3:
-                    cout << "password is incorrect";
+                    cout << "password is incorrect, enter password again";
+                    cin >> newpass;
+                };
+            } while (n[i].userreturn(newname, newpass));
+            cout << "what do you want to change: 1 for username \n 2 for password \n";
+            cin >> act_case3;
+            for (int i = 1; i <= con; i++)
+                switch (act_case3)
+                {
+                case 1:
+                    cout << "are you sure you want to proceed?";
+                    cin >> v;
+                    if (v == 0)
+                        break;
+                    cout << "enter new pass";
+                    do
+                    {
+                        cin >> newpass2;
+                        cout << "please verify the password";
+                        cin >> newpass3;
+                    } while (!n[i].passverify(newpass2, newpass3));
+                    n[i].changepass(newpass2);
+                    cout << "password succesfully changed";
+                    i = con;
+                    break;
+                case 2:
+                    cout << "are you sure you want to proceed?";
+                    cin >> v;
+                    if (v == 0)
+                        break;
+                    cout << "enter new name";
+                    n[i].changeuser(newname2);
+                    cout << "username succesfully changed";
+                    break;
+                default:
+                    cout << "wrong input";
                     break;
                 };
         }
