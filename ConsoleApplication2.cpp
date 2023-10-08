@@ -77,24 +77,7 @@ int main()
             int act_case3;
             cout << "enter old username and password \n";
             cin >> newname >> newpass;
-            do
-            {
-                switch (n[i].userreturn(newname, newpass))
-                {
-                case 1:
-                    cout << "correct password and username, logging in...";
-                    break;
-                case 2:
-                    cout << "user does not exist\n enter details again";
-                    cin >> newname >> newpass;
-                case 3:
-                    cout << "password is incorrect, enter password again";
-                    cin >> newpass;
-                };
-            } while (n[i].userreturn(newname, newpass));
-            cout << "what do you want to change: 1 for username \n 2 for password \n";
-            cin >> act_case3; //sexy bomba racheta
-            for (int i = 1; i <= con; i++)
+
                 switch (act_case3)
                 {
                 case 1:
