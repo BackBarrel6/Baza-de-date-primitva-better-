@@ -37,10 +37,22 @@ public:
     }
     void userdisplay()
     {
-        cout << username << ' ' << password<<' ';
+        cout << username << ' ' << password << ' ';
+    }
+    bool userexcheck(string newname)
+    {
+        if (newname == username)
+            return 1;
+        return 0;
+    }
+    bool passcheck(string newpass)
+    {
+        if (newpass == password)
+            return 1;
+        return 0;
     }
 };
-int act, con, i;
+int act, con, i, j;
 string newname, newpass, newpass2, newpass3, newname2;
 bool v;
 user n[1005];
@@ -54,6 +66,31 @@ int main()
         switch (act)
         {
         case 1:
+            bool ok = 0;
+            cout << "are you sure you want to proceed? \n";
+            cin >> v;
+            if (v == 0)
+                break;
+            cout << "enter username";
+            do
+            {
+                cin >> newname;
+                for (i = 1; i <= con; i++)
+                {
+                    if (n[i].userexcheck(newname))
+                        ok = 1;
+                }
+                if (ok == 0)
+                    cout << "user does not exist";
+            } while (!ok);
+            ok = 0;
+            do
+            {
+                cin >> newpass;
+                if (n[i].passcheck(newpass))
+                    ok = 1;
+            } while (!ok);
+            cout<<"succesfull login, welcome";
             /// de scris asta ca mie lene
         case 2:
             cout << "are you sure you want to proceed? \n";
@@ -71,13 +108,13 @@ int main()
             }
             break;
         case 3:
-        cout<<"username"<<' '<<"password \n";
-            for(i=1;i<=con;i++)
-            n[i].userdisplay();
+            cout << "username" << ' ' << "password \n";
+            for (i = 1; i <= con; i++)
+                n[i].userdisplay();
             break;
         default:
             cout << "wrong input \n";
             break;
         };
     }
-};
+}
