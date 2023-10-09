@@ -90,7 +90,7 @@ int main()
                 if (n[i].passcheck(newpass))
                     ok = 1;
             } while (!ok);
-            cout<<"succesfull login, welcome";
+            cout << "succesfull login, welcome";
             /// de scris asta ca mie lene
         case 2:
             cout << "are you sure you want to proceed? \n";
