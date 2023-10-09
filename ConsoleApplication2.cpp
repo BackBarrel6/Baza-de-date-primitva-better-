@@ -37,7 +37,7 @@ public:
     }
     void userdisplay()
     {
-        cout << username << ' ' << password<<' ';
+        cout << username << ' ' << password << ' ';
     }
 };
 int act, con, i;
@@ -71,9 +71,9 @@ int main()
             }
             break;
         case 3:
-        cout<<"username"<<' '<<"password \n";
-            for(i=1;i<=con;i++)
-            n[i].userdisplay();
+            cout << "username" << ' ' << "password \n";
+            for (i = 1; i <= con; i++)
+                n[i].userdisplay();
             break;
         default:
             cout << "wrong input \n";
