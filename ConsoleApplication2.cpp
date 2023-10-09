@@ -37,7 +37,19 @@ public:
     }
     void userdisplay()
     {
-        cout << username << ' ' << password<<' ';
+        cout << username << ' ' << password << ' ';
+    }
+    bool userexcheck(string newname)
+    {
+        if (newname == username)
+            return 1;
+        return 0;
+    }
+    bool passcheck(string newpass)
+    {
+        if (newpass == password)
+            return 1;
+        return 0;
     }
 };
 int act, con, i, j;
