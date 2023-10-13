@@ -112,6 +112,14 @@ int main()
             for (i = 1; i <= con; i++)
                 n[i].userdisplay();
             break;
+        case 4:
+            string username, password;
+            fin >> con;
+            for (i = 1; i <= n; i++)
+            {
+                fin >> username >> password;
+                n[i].createuser(username, password);
+            }
         default:
             cout << "wrong input \n";
             break;
