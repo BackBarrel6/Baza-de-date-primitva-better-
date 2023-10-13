@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+ifstream fin("userbase.inout");
 class user
 {
 private:
@@ -113,12 +114,11 @@ int main()
                 n[i].userdisplay();
             break;
         case 4:
-            string username, password;
             fin >> con;
-            for (i = 1; i <= n; i++)
+            for (i = 1; i <= con; i++)
             {
-                fin >> username >> password;
-                n[i].createuser(username, password);
+                fin >> newname >> newpass;
+                n[i].createuser(newname, newpass);
             }
         default:
             cout << "wrong input \n";
