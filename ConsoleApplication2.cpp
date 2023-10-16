@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 ifstream fin("userbase.inout");
-std::ofstream fout("userbase.inout", std::ios::out | std::ios::trunc);
+ofstream fout("userbase.inout", ios::out | ios::trunc);
 
 class user
 {
