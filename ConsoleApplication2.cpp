@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+ifstream fin("userbase.inout");
+ofstream fout("userbase.inout");
 class user
 {
 private:
@@ -51,6 +53,9 @@ public:
             return 1;
         return 0;
     }
+    void fileuse(bool k)
+    {
+    }
 };
 int act, con, i, j;
 string newname, newpass, newpass2, newpass3, newname2;
@@ -59,6 +64,12 @@ user n[1005];
 int main()
 {
     cout << "enter action \n 1.Log in  \n 2.Create user \n 3.List users \n 4.(admin)Read users from file \n";
+    fin >> con;
+    for (i = 1; i <= con; i++)
+    {
+        fin >> newname >> newpass;
+        n[i].createuser(newname, newpass);
+    }
     /*de adaugat schimbare user si parola dupa logare*/
     while (true)
     {
